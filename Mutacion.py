@@ -1,6 +1,6 @@
 import random
 
-## Esta clase se usa para mutar a los invividuos bit por bit
+## Esta clase se usa para mutar a los invividuos gen por gen
 
 class mutacion:
 

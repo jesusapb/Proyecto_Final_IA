@@ -5,7 +5,7 @@ import math
 
 '''
 
-class CrearPoblacion:
+class CrearPesos_Precios:
     # se pasan al constructor la longitud de los individuos
     #la capcidad de la bolsa
     def __init__(self,longitud, capa):
@@ -49,7 +49,7 @@ class CrearPoblacion:
 
 
 
-poblacion= CrearPoblacion(15,40)
+poblacion= CrearPesos_Precios(15,40)
 ##poblacion.CrearNuevaPoblacion()
 poblacion.crearPrecios()
 poblacion.crearPesos()
