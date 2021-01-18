@@ -2,20 +2,19 @@ import  random
 import math
 
 '''  
-En esta clase se crea a la poblacion, en base a la logitud y al tamaño que se pasan en el constructor
-se regresa a traves del atributo poblacion
+
 '''
 
 class CrearPoblacion:
-    # se pasan al constructor la longitud de los individuos y el
-    # tamaño de la poblacion respectivamente
-    def __init__(self,longitud, tama):
+    # se pasan al constructor la longitud de los individuos
+    #la capcidad de la bolsa
+    def __init__(self,longitud, capa):
         #longitud de la cadena
         self.longitud= longitud
-        #tamaño de la poblacion
-        self.tama=tama
+        #capacidad de la mochila
+        self.capa=capa
         #la poblacio, se crea la lista vacia para facilitar el manejo
-        self.poblacion = []
+        #self.poblacion = []
         self.Listaprecios=[]
         self.ListaPesos=[]
 
@@ -35,7 +34,7 @@ class CrearPoblacion:
 
 
     def crearPesosObjetos(self):
-        numero = math.floor(self.tama/2)
+        numero = math.floor(self.capa/2)
         return random.randint(0, numero)
 
 
