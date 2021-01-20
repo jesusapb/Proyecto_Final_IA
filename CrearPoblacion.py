@@ -49,7 +49,7 @@ class CrearPoblacion:
 
 
 
-poblacion= CrearPoblacion(4,4,25)
+poblacion= CrearPoblacion(15,8)
 poblacion.CrearNuevaPoblacion()
 print(poblacion.poblacion)
 

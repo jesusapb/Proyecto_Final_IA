@@ -1,6 +1,6 @@
 from Calculo import *
 
-class Bolsa:
+class CalcularBolsas:
 
     def __init__(self,poblacion,Precios,Pesos, pesoMochila):
         self.poblacion = poblacion
@@ -11,7 +11,7 @@ class Bolsa:
         self.listaPrecios = []
 
 
-    def CalcularBolsas(self):
+    def Calcular_PyP_Bolsas(self):
 
         for i in self.poblacion:
             CalcularBolsa = Calculo(self.Pesos,self.Precios,i)
@@ -19,7 +19,6 @@ class Bolsa:
             CalcularBolsa.CalcularPrecioBolsa()
             self.listaPesos.append(CalcularBolsa.totalPesos)
             self.listaPrecios.append(CalcularBolsa.totalPecios)
-
         print(self.listaPesos)
         print(self.listaPrecios)
 
@@ -34,5 +33,5 @@ PE = [21, 25, 2, 9]
 PR = [72, 99, 67, 81]
 
 
-NuevaBolsa = Bolsa(A,PR , PE, pesoMochila)
-NuevaBolsa.CalcularBolsas()
+NuevaBolsa = CalcularBolsas(A,PR , PE, pesoMochila)
+NuevaBolsa.Calcular_PyP_Bolsas()
