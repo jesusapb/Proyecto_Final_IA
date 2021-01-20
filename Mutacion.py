@@ -2,7 +2,7 @@ import random
 
 ## Esta clase se usa para mutar a los invividuos gen por gen
 
-class mutacion:
+class Mutacion:
 
     def __init__(self, porcentaje, ind_ori):
         self.porcentaje = porcentaje
@@ -51,7 +51,7 @@ class mutacion:
 
 
 B=[12,45,65,75,85,22,44,83]
-num=mutacion(10,B)
+num=Mutacion(10,B)
 num.mutar_individuo()
 print(num.ind_nuevo)
 

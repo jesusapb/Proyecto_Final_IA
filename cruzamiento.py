@@ -5,7 +5,7 @@ import random
 # o no, siguiendo la probabilidad de intercambio
 
 ##se cambiara el nombre a cruzar
-class cruzamiento:
+class Cruzamiento:
 
     def __init__(self, ini_A, ind_B, probabilidad):
         self.ini_A = ini_A
@@ -82,7 +82,7 @@ class cruzamiento:
             self.hijoA = self.ini_A
             self.hijoB = self.ini_B
 
-        # pass
+
 
     def resultado_reproduccion(self):
         print("Padres")
@@ -100,13 +100,12 @@ class cruzamiento:
         print(self.probabilidad)
 
 
-A = [1, 1, 0, 1]
-B = [1, 0, 0, 1]
+
 
 C = [50, 43, 66, 93, 34, 22]
 D = [65, 2, 84, 23, 65, 33]
 
-cadena=cruzamiento(C,D,90)
+cadena=Cruzamiento(C,D,90)
 
 #print(cadena.numero_aleatorio())
  #cadena.Construir_Hijos()

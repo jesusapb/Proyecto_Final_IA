@@ -7,11 +7,12 @@ se regresa a traves del atributo poblacion
 class CrearPoblacion:
     # se pasan al constructor la longitud de los individuos y el
     # tamaño de la poblacion respectivamente
-    def __init__(self,longitud, tama):
+    def __init__(self,longitud, tama, rango = 100):
         #longitud de la cadena
         self.longitud= longitud
         #tamaño de la poblacion
         self.tama=tama
+        self.rango = rango
         #la poblacio, se crea la lista vacia para facilitar el manejo
         self.poblacion = []
 
@@ -22,7 +23,8 @@ class CrearPoblacion:
 
 
     def creacromosoma(self):
-        return random.randint(1,100)
+        return random.randint(1,self.rango)
+        #return random.randint(1,100)
 
 
     def crearIndividuo2(self):
@@ -47,7 +49,7 @@ class CrearPoblacion:
 
 
 
-poblacion= CrearPoblacion(15,3)
+poblacion= CrearPoblacion(4,4,25)
 poblacion.CrearNuevaPoblacion()
 print(poblacion.poblacion)
 

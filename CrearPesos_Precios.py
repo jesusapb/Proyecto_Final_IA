@@ -49,11 +49,12 @@ class CrearPesos_Precios:
 
 
 
-poblacion= CrearPesos_Precios(15,40)
+poblacion= CrearPesos_Precios(4,60)
 ##poblacion.CrearNuevaPoblacion()
 poblacion.crearPrecios()
 poblacion.crearPesos()
 #print(poblacion.poblacion)
-print(poblacion.Listaprecios)
-print(poblacion.ListaPesos)
 
+
+print(poblacion.ListaPesos)
+print(poblacion.Listaprecios)
