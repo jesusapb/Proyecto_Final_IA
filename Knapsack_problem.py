@@ -39,10 +39,19 @@ class knapsack:
         print(self.ListaPesos)
         print(self.ListaPrecios)
 
+    def buscarSoluacion(self):
+        print("Se esta buscando la solucion...")
+        ##funcion Fitnest
+
+        # Torneo
+        # Cruzamiento
+        # mutacion
+
 
 
 
 
 prueba1=knapsack(15,4,10, 50,50,500,10)
 prueba1.generar_poblacion()
+prueba1.buscarSoluacion()
 
