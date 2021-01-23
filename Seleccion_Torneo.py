@@ -30,7 +30,7 @@ class seleccion_torneo:
                 self.NuevaPoblacion.append(self.poblacion[num_Ale1])
 
 
-    # se hace el torneo comparando 3 individuos continuos, se selecciona la mejor, el cual pasa a la nueva poblacion
+    # se hace el torneo comparando 2 individuos continuos, se selecciona la mejor, el cual pasa a la nueva poblacion
     def torneo3(self):
         i=0
         while i< self.tama:

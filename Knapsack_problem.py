@@ -3,6 +3,8 @@ from CrearPoblacion import *
 from CrearPesos_Precios import *
 from CalcularBolsas import *
 from Seleccion_Torneo import *
+from Hacer_Cruzamiento import *
+from Hacer_Mutacion import *
 
 
 '''
@@ -27,6 +29,7 @@ class knapsack:
         self.Pesos = []
         self.Precios = []
 
+
     #se crea la poblacion inicial, los pesos y precios
 
     def generar_poblacion(self):
@@ -47,34 +50,50 @@ class knapsack:
 
     def buscarSoluacion(self):
 
-        listaPesos = []
-        listaPrecios = []
-        print("Se esta buscando la solucion...")
-        ##funcion Fitnest
-        evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
-        evaluar.Calcular_PyP_Bolsas()
-        listaPesos = evaluar.listaPesos
-        listaPrecios = evaluar.listaPrecios
-        print(listaPesos)
-        print(listaPrecios)
+        j=0
+        while j < self.Num_iteraciones:
+            listaPesos = []
+            listaPrecios = []
+            print("Se esta buscando la solucion...")
+            ##funcion Fitnest
+            evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
+            evaluar.Calcular_PyP_Bolsas()
+            listaPesos = evaluar.listaPesos
+            listaPrecios = evaluar.listaPrecios
+            print(listaPesos)
+            print(listaPrecios)
+            #print(evaluar.ListaSoluciones)
+            if evaluar.ListaSoluciones !=[]:
+                self.Respuestas.append(evaluar.ListaSoluciones)
 
 
         # Torneo
-        torneo = seleccion_torneo(self.PoblacionNueva, listaPesos)
-        torneo.torneo4()
-        torneo.mezclar_poblacion()
-        poblacionTorneo = torneo.NuevaPoblacion
-        print(poblacionTorneo)
+            torneo = seleccion_torneo(self.PoblacionNueva, listaPesos)
+            torneo.torneo3()
+            torneo.mezclar_poblacion()
+            poblacionTorneo = torneo.NuevaPoblacion
+            print(poblacionTorneo)
         # Cruzamiento
-
+            cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento)
+            cruzamiento.cruzarPoblacion()
+            poblacionIntercambio = cruzamiento.nuevaPoblacion
 
         # mutacion
+            Mutar = Hacer_Mutacion(poblacionIntercambio, self.Prob_Mutacion,self.Rango)
+            Mutar.MutarPoblacion()
+            poblacionMutada = Mutar.nuevaPoblacion
+
+            self.PoblacionNueva.clear()
+            self.PoblacionNueva = copy.deepcopy(poblacionMutada)
+            j = j + 1
+
+        print(self.Respuestas)
 
 
 
 
 
-prueba1=knapsack(15,4,50, 50,50,500,10)
-prueba1.generar_poblacion()
-prueba1.buscarSoluacion()
+#prueba1=knapsack(15,4,50,10,20,5,10)
+#prueba1.generar_poblacion()
+#prueba1.buscarSoluacion()
 

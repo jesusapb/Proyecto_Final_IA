@@ -27,7 +27,7 @@ class Hacer_cruzamiento:
 
 
 
-A=[[62, 37, 55, 41, 93, 35], [92, 88, 26, 65, 11, 88], [77, 90, 68, 37, 36, 62], [49, 64, 85, 92, 85, 4]]
-prueba = Hacer_cruzamiento(A,30)
-prueba.cruzarPoblacion()
-print(prueba.nuevaPoblacion)
+#A=[[62, 37, 55, 41, 93, 35], [92, 88, 26, 65, 11, 88], [77, 90, 68, 37, 36, 62], [49, 64, 85, 92, 85, 4]]
+#prueba = Hacer_cruzamiento(A,30)
+#prueba.cruzarPoblacion()
+#print(prueba.nuevaPoblacion)

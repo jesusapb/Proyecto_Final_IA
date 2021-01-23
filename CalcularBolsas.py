@@ -11,9 +11,11 @@ class CalcularBolsas:
         self.listaPesos = []
         self.listaPrecios = []
         self.ListaFitnest=[]
+        self.ListaSoluciones = []
 
 
     def Calcular_PyP_Bolsas(self):
+
 
         for i in self.poblacion:
             CalcularBolsa = Calculo(self.Pesos,self.Precios,i)
@@ -26,6 +28,10 @@ class CalcularBolsas:
         #print(self.listaPrecios)
 
 
+    def obtenerSolucion(self):
+        for A, B in zip( self.poblacion,self.listaPesos):
+            if B <= self.pesoMochila:
+                self.ListaSoluciones.append(A)
 
 
 

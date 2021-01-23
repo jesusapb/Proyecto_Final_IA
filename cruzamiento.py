@@ -51,18 +51,18 @@ class Cruzamiento:
         self.mutoAPartirD = ApartirD
         i = 0
         for A, B in zip(self.ini_A, self.ini_B):
-            print(A)
-            print(B)
-            print("el nivel de bits recorridos es:", i)
+            #print(A)
+            #print(B)
+            #print("el nivel de bits recorridos es:", i)
             # print(i)
             i = i + 1
             if i > ApartirD:
-                print("se edita")
-                print("el numero aleatorio es:", ApartirD)
+                #print("se edita")
+                #print("el numero aleatorio es:", ApartirD)
                 self.hijoA.append(B)
                 self.hijoB.append(A)
             else:
-                print("no se edita")
+                #print("no se edita")
                 self.hijoA.append(A)
                 self.hijoB.append(B)
 
@@ -74,10 +74,10 @@ class Cruzamiento:
         self.hijoB = []
         # print(self.prob_Cruzamiento())
         if self.prob_Cruzamiento() == True:
-            print("si se cruzaron")
+            #print("si se cruzaron")
             self.Construir_Hijos()
         else:
-            print("no se cruzaron")
+            #print("no se cruzaron")
             self.hijoA = self.ini_A
             self.hijoB = self.ini_B
 
@@ -101,12 +101,12 @@ class Cruzamiento:
 
 
 
-C = [81, 70, 31, 18, 82, 36, 47, 57, 99, 76, 35, 6, 15, 96, 91]
-D = [73, 62, 53, 80, 49, 16, 19, 77, 51, 27, 53, 15, 68, 40, 17]
+#C = [81, 70, 31, 18, 82, 36, 47, 57, 99, 76, 35, 6, 15, 96, 91]
+#D = [73, 62, 53, 80, 49, 16, 19, 77, 51, 27, 53, 15, 68, 40, 17]
 
-cadena=Cruzamiento(C,D,90)
+#cadena=Cruzamiento(C,D,90)
 
 #print(cadena.numero_aleatorio())
  #cadena.Construir_Hijos()
-cadena.procesoCruzamiento()
-cadena.resultado_reproduccion()
+#cadena.procesoCruzamiento()
+#cadena.resultado_reproduccion()
