@@ -4,7 +4,6 @@ import random
 # En esta clase se intercabian las colas apartir de un punto aleatorio, primero se considera si se intercambian
 # o no, siguiendo la probabilidad de intercambio
 
-##se cambiara el nombre a cruzar
 class Cruzamiento:
 
     def __init__(self, ini_A, ind_B, probabilidad):
@@ -102,8 +101,8 @@ class Cruzamiento:
 
 
 
-C = [50, 43, 66, 93, 34, 22]
-D = [65, 2, 84, 23, 65, 33]
+C = [81, 70, 31, 18, 82, 36, 47, 57, 99, 76, 35, 6, 15, 96, 91]
+D = [73, 62, 53, 80, 49, 16, 19, 77, 51, 27, 53, 15, 68, 40, 17]
 
 cadena=Cruzamiento(C,D,90)
 
@@ -111,5 +110,3 @@ cadena=Cruzamiento(C,D,90)
  #cadena.Construir_Hijos()
 cadena.procesoCruzamiento()
 cadena.resultado_reproduccion()
-
-# cadena.procesoCruzamiento()

@@ -9,7 +9,6 @@ class Calculo:
         self.totalPesos = 0
         self.totalPecios= 0
 
-
     def CalcularPesoBolsa(self):
         total=0
         for a, b in zip(self.listaPesos, self.individuo):

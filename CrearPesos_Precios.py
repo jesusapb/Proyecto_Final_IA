@@ -8,19 +8,20 @@ import math
 class CrearPesos_Precios:
     # se pasan al constructor la longitud de los individuos
     #la capcidad de la bolsa
-    def __init__(self,longitud, capa):
+    def __init__(self,longitud, capa, rango):
         #longitud de la cadena
         self.longitud= longitud
         #capacidad de la mochila
         self.capa=capa
         #la poblacio, se crea la lista vacia para facilitar el manejo
-        #self.poblacion = []
         self.Listaprecios=[]
         self.ListaPesos=[]
+        self.rango = rango
 
 
     def creaPreciosObjeto(self):
-        return random.randint(1,100)
+        return random.randint(1,self.rango)
+        #return random.randint(1,100)
 
 
     def crearPrecios(self):
@@ -49,12 +50,8 @@ class CrearPesos_Precios:
 
 
 
-poblacion= CrearPesos_Precios(15,60)
-##poblacion.CrearNuevaPoblacion()
-poblacion.crearPrecios()
-poblacion.crearPesos()
-#print(poblacion.poblacion)
-
-
-print(poblacion.ListaPesos)
-print(poblacion.Listaprecios)
+#poblacion= CrearPesos_Precios(15,50,100)
+#poblacion.crearPrecios()
+#poblacion.crearPesos()
+#print(poblacion.ListaPesos)
+#print(poblacion.Listaprecios)
