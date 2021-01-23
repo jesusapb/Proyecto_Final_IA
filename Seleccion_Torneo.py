@@ -60,3 +60,4 @@ class seleccion_torneo:
     def mezclar_poblacion(self):
         mezcla = random.sample(self.NuevaPoblacion, self.tama)
         self.NuevaPoblacion = mezcla
+
