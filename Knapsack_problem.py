@@ -81,7 +81,7 @@ class knapsack:
             #print("poblacion torneo:",poblacionTorneo)
         # Cruzamiento
             cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento)
-            cruzamiento.cruzarPoblacion()
+            cruzamiento.cruzarPoblacion2()
             poblacionIntercambio = cruzamiento.nuevaPoblacion
 
         # mutacion
