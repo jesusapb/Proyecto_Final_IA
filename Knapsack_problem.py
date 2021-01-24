@@ -52,9 +52,11 @@ class knapsack:
 
         j=0
         while j < self.Num_iteraciones:
+            print("Se esta buscando la solucion...")
+            print("nueva Poblacion:", self.PoblacionNueva)
             listaPesos = []
             listaPrecios = []
-            print("Se esta buscando la solucion...")
+
             ##funcion Fitnest
             evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
             evaluar.Calcular_PyP_Bolsas()
@@ -72,7 +74,7 @@ class knapsack:
             torneo.torneo3()
             torneo.mezclar_poblacion()
             poblacionTorneo = torneo.NuevaPoblacion
-            print(poblacionTorneo)
+            print("poblacion torneo:",poblacionTorneo)
         # Cruzamiento
             cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento)
             cruzamiento.cruzarPoblacion()
@@ -87,7 +89,7 @@ class knapsack:
             self.PoblacionNueva = copy.deepcopy(poblacionMutada)
             j = j + 1
 
-        print(self.Respuestas)
+        print("solucion:",self.Respuestas)
 
 
 
