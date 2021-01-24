@@ -5,7 +5,7 @@ from CalcularBolsas import *
 from Seleccion_Torneo import *
 from Hacer_Cruzamiento import *
 from Hacer_Mutacion import *
-
+from Encontrar_Solucion_Ideal import *
 
 '''
 Aqui se desarrolla el algoritmo del problema de la mochila
@@ -62,14 +62,17 @@ class knapsack:
             ##funcion Fitnest
             evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
             evaluar.Calcular_PyP_Bolsas()
-            evaluar.obtenerSolucion()
+            #evaluar.obtenerSolucion()
             listaPesos = evaluar.listaPesos
             listaPrecios = evaluar.listaPrecios
             #print(listaPesos)
             #print(listaPrecios)
             #print("Soluciones:",evaluar.ListaSoluciones)
-            if evaluar.ListaSoluciones !=[]:
-                self.Respuestas.append(evaluar.ListaSoluciones)
+            #if evaluar.ListaSoluciones !=[]:
+            #    self.Respuestas.append(evaluar.ListaSoluciones)
+            for A, B, C, in zip(self.PoblacionNueva, listaPesos,listaPrecios):
+                if B <= self.Capa:
+                    self.Respuestas.append([A,B,C])
 
 
 
@@ -93,7 +96,11 @@ class knapsack:
             self.PoblacionNueva = copy.deepcopy(poblacionMutada)
             j = j + 1
 
-        print("solucion:",self.Respuestas)
+        print("soluciones:",self.Respuestas)
+
+        solucionID = Encontrar_Solucion_Ideal(self.Respuestas)
+        solucionID.bolsa_Mayor_Peso()
+        print(solucionID.Solucion_ideal)
 
 
 
