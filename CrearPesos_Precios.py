@@ -36,7 +36,7 @@ class CrearPesos_Precios:
 
     def crearPesosObjetos(self):
         numero = math.floor(self.capa/2)
-        return random.randint(0, numero)
+        return random.randint(1, numero)
 
 
     def crearPesos(self):

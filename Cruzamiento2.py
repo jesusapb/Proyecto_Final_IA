@@ -91,12 +91,3 @@ class intercambiar2:
         print(self.probabilidad)
 
 
-#A = [1, 1, 0, 1]
-#B = [1, 0, 0, 1]
-
-#C = [1, 2, 3, 4, 5, 6]
-#D = [0, 1, 6, 5, 2, 1]
-
-#cadena=intercambiar2(C,D,40)
-#cadena.procesoCruzamiento()
-#cadena.resultado_reproduccion()

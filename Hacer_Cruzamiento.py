@@ -7,11 +7,14 @@ se le debe pasar en el constructor a la poblacion a cruzar y la probabilidad de 
 '''
 class Hacer_cruzamiento:
     # se pasa al constructor la poblacion y la probabilidad de cruzamiento
-    def __init__(self, poblacion, probabilidad):
+    def __init__(self, poblacion, probabilidad,listaPesos,Capa):
         self.poblacion = poblacion
         self.nuevaPoblacion = []
         self.tama = len(self.poblacion)
         self.probabilidad = probabilidad
+        self.listaPesos = listaPesos
+        self.Capa = Capa
+
 
     #se cruza a la poblacion de dos en dos, por ello la poblacion debe ser par
     def cruzarPoblacion(self):
@@ -35,6 +38,23 @@ class Hacer_cruzamiento:
             cambio.procesoCruzamiento()
             self.nuevaPoblacion.append(cambio.hijoA)
             self.nuevaPoblacion.append(cambio.hijoB)
+            i = i + 2
+
+    def cruzarPoblacion3(self):
+        i = 0
+        while i < self.tama:
+            if (self.listaPesos[i] and self.listaPesos[i+1]) > self.Capa:
+                A = self.poblacion[i]
+                B = self.poblacion[i + 1]
+                cambio = intercambiar2(A, B, self.probabilidad)
+                cambio.procesoCruzamiento()
+                self.nuevaPoblacion.append(cambio.hijoA)
+                self.nuevaPoblacion.append(cambio.hijoB)
+
+            else:
+                self.nuevaPoblacion.append(self.poblacion[i])
+                self.nuevaPoblacion.append(self.poblacion[i+1])
+
             i = i + 2
 
 

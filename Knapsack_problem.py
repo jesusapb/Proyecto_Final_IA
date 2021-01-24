@@ -83,8 +83,8 @@ class knapsack:
             poblacionTorneo = torneo.NuevaPoblacion
             #print("poblacion torneo:",poblacionTorneo)
         # Cruzamiento
-            cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento)
-            cruzamiento.cruzarPoblacion2()
+            cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento,listaPesos,self.Capa)
+            cruzamiento.cruzarPoblacion3()
             poblacionIntercambio = cruzamiento.nuevaPoblacion
 
         # mutacion
@@ -100,7 +100,7 @@ class knapsack:
 
         solucionID = Encontrar_Solucion_Ideal(self.Respuestas)
         solucionID.bolsa_Mayor_Peso()
-        print(solucionID.Solucion_ideal)
+        print("Solucion ideal",solucionID.Solucion_ideal)
 
 
 
