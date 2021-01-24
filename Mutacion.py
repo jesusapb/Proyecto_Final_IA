@@ -4,7 +4,7 @@ import random
 
 class Mutacion:
 
-    def __init__(self, porcentaje, ind_ori, rango=100):
+    def __init__(self, porcentaje, ind_ori, rango):
         self.porcentaje = porcentaje
         self.ind_ori = ind_ori
         self.ind_nuevo = []
@@ -14,7 +14,7 @@ class Mutacion:
         return random.randint(1, 100)
 
     def numero_mutado(self):
-        return random.randint(1,self.rango)
+        return random.randint(0,self.rango)
         #return random.randint(1, 100)
 
 
@@ -54,8 +54,8 @@ class Mutacion:
 
 
 
-B=[90, 17, 43, 85, 2, 36, 79, 47, 55, 75, 34, 95, 93, 77, 68]
-num=Mutacion(60,B)
-num.mutar_individuo()
-print(num.ind_nuevo)
+#B=[90, 17, 43, 85, 2, 36, 79, 47, 55, 75, 34, 95, 93, 77, 68]
+#num=Mutacion(60,B)
+#num.mutar_individuo()
+#print(num.ind_nuevo)
 

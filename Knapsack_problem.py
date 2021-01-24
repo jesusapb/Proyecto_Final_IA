@@ -48,6 +48,8 @@ class knapsack:
         print(self.Precios)
         self.PoblacionNueva = copy.copy(self.PoblacionInicial)
 
+
+
     def buscarSoluacion(self):
 
         j=0
@@ -60,13 +62,15 @@ class knapsack:
             ##funcion Fitnest
             evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
             evaluar.Calcular_PyP_Bolsas()
+            evaluar.obtenerSolucion()
             listaPesos = evaluar.listaPesos
             listaPrecios = evaluar.listaPrecios
             print(listaPesos)
             print(listaPrecios)
-            #print(evaluar.ListaSoluciones)
+            print("Soluciones:",evaluar.ListaSoluciones)
             if evaluar.ListaSoluciones !=[]:
                 self.Respuestas.append(evaluar.ListaSoluciones)
+
 
 
         # Torneo
@@ -74,7 +78,7 @@ class knapsack:
             torneo.torneo3()
             torneo.mezclar_poblacion()
             poblacionTorneo = torneo.NuevaPoblacion
-            print("poblacion torneo:",poblacionTorneo)
+            #print("poblacion torneo:",poblacionTorneo)
         # Cruzamiento
             cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento)
             cruzamiento.cruzarPoblacion()

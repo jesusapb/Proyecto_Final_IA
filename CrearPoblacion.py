@@ -18,7 +18,8 @@ class CrearPoblacion:
 
 
     def creacromosoma(self):
-        return random.randint(1,self.rango)
+        #se ajusto a Cero para mejorar el decenso
+        return random.randint(0,self.rango)
         #return random.randint(1,100)
 
 
