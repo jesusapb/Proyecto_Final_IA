@@ -41,9 +41,7 @@ class intercambiar2:
         for A,B in zip(self.ini_A,self.ini_B):
             seIntercambia=self.NuevaProbabilidad()
             if seIntercambia == True:
-                print("si se edita")
-                #self.hijoA.append(B)
-                #self.hijoB.append(A)
+                #print("si se edita")
                 if A <= B:
                     self.hijoA.append(A)
                     self.hijoB.append(A)
@@ -53,7 +51,7 @@ class intercambiar2:
 
 
             else:
-                print("no se edita")
+                #print("no se edita")
                 self.hijoA.append(A)
                 self.hijoB.append(B)
 
@@ -68,11 +66,11 @@ class intercambiar2:
         self.hijoB = []
         # print(self.prob_Cruzamiento())
         if self.prob_Cruzamiento() == True:
-            print("si se cruzaron")
+            #print("si se cruzaron")
             self.Construir_Hijos()
             self.huboIntercambio=True
         else:
-            print("no se cruzaron")
+            #print("no se cruzaron")
             self.hijoA = self.ini_A
             self.hijoB = self.ini_B
 

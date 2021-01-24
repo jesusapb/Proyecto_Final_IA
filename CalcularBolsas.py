@@ -29,14 +29,9 @@ class CalcularBolsas:
 
 
     def obtenerSolucion(self):
-        for A, B in zip( self.poblacion,self.listaPesos):
-            #print(A)
-            #print(B)
+        for A, B,C in zip( self.poblacion,self.listaPesos, self.listaPrecios):
             if B <= self.pesoMochila:
-                self.ListaSoluciones.append(A)
-
-
-
+                self.ListaSoluciones.append([A,B,C])
 
 #pesoMochila = 30
 

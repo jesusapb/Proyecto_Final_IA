@@ -44,8 +44,8 @@ class knapsack:
         pesosyprecios.crearPrecios()
         #print(pesosyprecios.ListaPesos)
         self.Precios = pesosyprecios.Listaprecios
-        print(self.Pesos)
-        print(self.Precios)
+        print("Lista de pesos",self.Pesos)
+        print("Lista de precios",self.Precios)
         self.PoblacionNueva = copy.copy(self.PoblacionInicial)
 
 
@@ -54,8 +54,8 @@ class knapsack:
 
         j=0
         while j < self.Num_iteraciones:
-            print("Se esta buscando la solucion...")
-            print("nueva Poblacion:", self.PoblacionNueva)
+            #print("Se esta buscando la solucion...")
+            #print("nueva Poblacion:", self.PoblacionNueva)
             listaPesos = []
             listaPrecios = []
 
@@ -65,9 +65,9 @@ class knapsack:
             evaluar.obtenerSolucion()
             listaPesos = evaluar.listaPesos
             listaPrecios = evaluar.listaPrecios
-            print(listaPesos)
-            print(listaPrecios)
-            print("Soluciones:",evaluar.ListaSoluciones)
+            #print(listaPesos)
+            #print(listaPrecios)
+            #print("Soluciones:",evaluar.ListaSoluciones)
             if evaluar.ListaSoluciones !=[]:
                 self.Respuestas.append(evaluar.ListaSoluciones)
 
