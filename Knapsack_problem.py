@@ -69,8 +69,6 @@ class knapsack:
             #print(listaPesos)
             #print(listaPrecios)
             #print("Soluciones:",evaluar.ListaSoluciones)
-            #if evaluar.ListaSoluciones !=[]:
-            #    self.Respuestas.append(evaluar.ListaSoluciones)
             for A, B, C, in zip(self.PoblacionNueva, listaPesos,listaPrecios):
                 if B <= self.Capa:
                     self.Respuestas.append([A,B,C])
@@ -102,12 +100,4 @@ class knapsack:
         solucionID = Encontrar_Solucion_Ideal(self.Respuestas)
         solucionID.bolsa_Mayor_Precio()
         print("Solucion ideal:",solucionID.Solucion_ideal)
-
-
-
-
-
-#prueba1=knapsack(15,4,50,10,20,5,10)
-#prueba1.generar_poblacion()
-#prueba1.buscarSoluacion()
 

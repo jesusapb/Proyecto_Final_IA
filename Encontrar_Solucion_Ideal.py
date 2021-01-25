@@ -1,5 +1,5 @@
 """
-En esta clase se busca la mejor solucion
+En esta clase se busca la mejor solucion, se le pasa la lista de soluciones
 """
 
 class Encontrar_Solucion_Ideal:
@@ -10,6 +10,7 @@ class Encontrar_Solucion_Ideal:
         self.Solucion_Mayor_Peso = []
         pass
 
+    # Se selecciona la bolsa con el mayor precio
     def bolsa_Mayor_Precio(self):
         mayor = [0,0,0]
         for i in self.Soluciones:
@@ -17,8 +18,8 @@ class Encontrar_Solucion_Ideal:
             if mayor[2] <= i[2]:
                 mayor = i
 
-        #print(mayor)
         self.Solucion_ideal = mayor
+
 
     def bolsa_mayor_peso(self):
         mayor = [0,0,0]
@@ -27,4 +28,5 @@ class Encontrar_Solucion_Ideal:
                 mayor = i
 
         self.Solucion_Mayor_Peso = mayor
+
 

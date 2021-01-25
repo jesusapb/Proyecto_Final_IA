@@ -1,8 +1,8 @@
 import random
 
 ## se intercambian bit por bit para formar a los hijos, apartir de la probabilidad de intercambio
-
 ##se cambiara el nombre a cruzar
+
 class intercambiar2:
 
     def __init__(self, ini_A, ind_B, probabilidad):

@@ -1,10 +1,8 @@
 import random
 
-"""
-Esta clase se usa para mutar a los invividuos gen por gen,
-La clase recibe el porcentaje de probabilidad de mutacion y el individuo que sera mutado
-"""
 
+''' Esta clase se usa para mutar a los invividuos gen por gen,
+    La clase recibe el porcentaje de probabilidad de mutacion y el individuo que sera mutado  '''
 
 class Mutacion:
 

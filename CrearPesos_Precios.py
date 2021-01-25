@@ -1,10 +1,8 @@
 import  random
 import math
 
-'''  
-En esta clase se crean las listas de pesos y precios, en base a la longitud de los individuos,
-la capacidad de los individuos y el rango en que pueden estar los precios
-'''
+''' En esta clase se crean las listas de pesos y precios, en base a la longitud de los individuos,
+    la capacidad de los individuos y el rango en que pueden estar los precios '''
 
 class CrearPesos_Precios:
     # se pasan al constructor la longitud de los individuos

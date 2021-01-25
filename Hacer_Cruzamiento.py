@@ -1,10 +1,11 @@
 from Cruzamiento import *
 from Cruzamiento2 import *
-'''
-Esta clase se encarga de hacer los cruzamientos de una poblacion
-tomando de dos en dos los elementos de una poblacion y haciendo el intercambio de colas
-se le debe pasar en el constructor a la poblacion a cruzar y la probabilidad de que hagan este cruzamiento
-'''
+
+
+''' Esta clase se encarga de hacer los cruzamientos de una poblacion tomando de dos en dos 
+    los elementos de una poblacion y haciendo el intercambio de colas, se le debe pasar en 
+    el constructor a la poblacion a cruzar y la probabilidad de que hagan este cruzamiento '''
+
 class Hacer_cruzamiento:
     # se pasa al constructor la poblacion y la probabilidad de cruzamiento
     def __init__(self, poblacion, probabilidad,listaPesos,Capa):
