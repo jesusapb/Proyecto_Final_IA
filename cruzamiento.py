@@ -1,9 +1,9 @@
 import random
 
-
-# En esta clase se intercabian las colas apartir de un punto aleatorio, primero se considera si se intercambian
-# o no, siguiendo la probabilidad de intercambio
-
+"""
+En esta clase se intercabian las colas apartir de un punto aleatorio, primero se 
+considera si se intercambian o no, siguiendo la probabilidad de intercambio
+"""
 class Cruzamiento:
 
     def __init__(self, ini_A, ind_B, probabilidad):

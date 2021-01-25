@@ -1,5 +1,9 @@
 from Calculo import *
 
+"""
+En esta clase se calcula el peso de las bolsas que conforman la
+poblacion, hace uso de la clase Calculo para otener en peso de cada bolsa
+"""
 
 class CalcularBolsas:
 

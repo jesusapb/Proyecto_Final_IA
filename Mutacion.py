@@ -1,9 +1,14 @@
 import random
 
-## Esta clase se usa para mutar a los invividuos gen por gen
+"""
+Esta clase se usa para mutar a los invividuos gen por gen,
+La clase recibe el porcentaje de probabilidad de mutacion y el individuo que sera mutado
+"""
+
 
 class Mutacion:
 
+    # se pasa en el constructor el porcentaje de mutacion y el individuo a mutar
     def __init__(self, porcentaje, ind_ori, rango):
         self.porcentaje = porcentaje
         self.ind_ori = ind_ori
@@ -27,6 +32,7 @@ class Mutacion:
             #print(numero)
             return False
 
+    # se muta o no al individuo y si es el caso
     def mutar_individuo(self):
         #print(self.ind_ori)
         #print(self.porcentaje)

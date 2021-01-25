@@ -9,6 +9,9 @@ from Encontrar_Solucion_Ideal import *
 
 '''
 Aqui se desarrolla el algoritmo del problema de la mochila
+Al contructor se le pasa la longitud de las cadena,el Tamaño de la poblacion, 
+la capacidad de la mochila, la probabilidad de mutacion, la probabilidad de 
+cruzamiento, el numero de iteraciones que va a tener y el rango en que estaran los genes
 '''
 
 
@@ -31,25 +34,24 @@ class knapsack:
 
 
     #se crea la poblacion inicial, los pesos y precios
-
     def generar_poblacion(self):
         poblacion = CrearPoblacion(self.Longitud, self.Tama, self.Rango)
         poblacion.CrearNuevaPoblacion()
         #print(poblacion.poblacion)
         self.PoblacionInicial = poblacion.poblacion
-        print(self.PoblacionInicial)
+        print("Poblacion inicial: ",self.PoblacionInicial)
         pesosyprecios = CrearPesos_Precios(self.Longitud, self.Capa, self.Rango)
         pesosyprecios.crearPesos()
         self.Pesos = pesosyprecios.ListaPesos
         pesosyprecios.crearPrecios()
-        #print(pesosyprecios.ListaPesos)
         self.Precios = pesosyprecios.Listaprecios
-        print("Lista de pesos",self.Pesos)
-        print("Lista de precios",self.Precios)
+        print("Lista de pesos: ",self.Pesos)
+        print("Lista de precios: ",self.Precios)
         self.PoblacionNueva = copy.copy(self.PoblacionInicial)
 
 
-
+    #En este metodo se busca la solucion, evaluando la poblacion, haciendo
+    # un torneo para encontrar a los mejores individuos, cruzandolos, mutandolos
     def buscarSoluacion(self):
 
         j=0
@@ -58,7 +60,6 @@ class knapsack:
             #print("nueva Poblacion:", self.PoblacionNueva)
             listaPesos = []
             listaPrecios = []
-
             ##funcion Fitnest
             evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
             evaluar.Calcular_PyP_Bolsas()
@@ -99,8 +100,8 @@ class knapsack:
         print("soluciones:",self.Respuestas)
 
         solucionID = Encontrar_Solucion_Ideal(self.Respuestas)
-        solucionID.bolsa_Mayor_Peso()
-        print("Solucion ideal",solucionID.Solucion_ideal)
+        solucionID.bolsa_Mayor_Precio()
+        print("Solucion ideal:",solucionID.Solucion_ideal)
 
 
 

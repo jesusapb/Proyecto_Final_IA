@@ -2,8 +2,8 @@ import random
 
 ''' 
 En esta clase se hace el proceso de seleccion de los mejores individuos que seran reproducidos, 
-    Se pasa al constructor 5 parametros, el numero de reinas, el tamaño de la de poblacion,
-    el numero de iteraciones, la probablidad de mutacion y la ´probabilidad de cruzamiento
+    Se pasa al constructor 2 parametros, la poblacion y los valores Fitnest(
+    el peso de los individuos de la poblacion)
     nota: este metodo tiene 3 formas de torneo, la que se usa es la llamada torneo4
 '''
 
@@ -41,7 +41,8 @@ class seleccion_torneo:
             i = i +1
 
 
-    #se hace el torneo comparando 3 individuos continuos, se selecciona la mejor, el cual pasa a la nueva poblacion
+    #se hace el torneo comparando 3 individuos continuos, se selecciona la mejor
+    # (con el fitnest mas bajo), el cual pasa a la nueva poblacion
     def torneo4(self):
         i=0
         while i< self.tama:

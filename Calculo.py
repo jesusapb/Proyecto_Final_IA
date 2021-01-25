@@ -1,4 +1,8 @@
 
+"""
+En esta clase se saca el peso del contenido de cada bolsa en forma individual,
+ esta clase es usada por calcularBolsa
+"""
 
 class Calculo:
 
