@@ -29,16 +29,3 @@ class Calculo:
         self.totalPecios = total
 
 
-
-
-
-#A=[1,2,3,4,5]
-#B=[5,4,3,2,1]
-#C=[1,2,3,4,5]
-
-#resultado = Calculo(A,B,C)
-#resultado.CalcularPesoBolsa()
-#resultado.CalcularPrecioBolsa()
-#print(resultado.totalPesos)
-#print(resultado.totalPecios)
-

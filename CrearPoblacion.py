@@ -22,7 +22,6 @@ class CrearPoblacion:
     def creacromosoma(self):
         #se ajusto a Cero para mejorar el decenso
         return random.randint(0,self.rango)
-        #return random.randint(1,100)
 
     # Se genera una lista en base a la longitud  del cromosoma establecida
     def crearIndividuo(self):

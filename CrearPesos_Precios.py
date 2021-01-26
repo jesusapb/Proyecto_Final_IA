@@ -37,9 +37,8 @@ class CrearPesos_Precios:
         numero = math.floor(self.capa/2)
         return random.randint(1, numero)
 
-    # atravez de este metodo se crean los pesos de los objetos con la condicion
+    # Atraves de este metodo se crean los pesos de los objetos con la condicion
     # que el peso debe estar entre 1 y la mitad de la capacidad de la mochila
-
     def crearPesos(self):
         i = 0
         individuo = []
