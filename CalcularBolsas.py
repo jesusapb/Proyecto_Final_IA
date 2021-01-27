@@ -4,7 +4,8 @@ from Calculo import *
     poblacion, hace uso de la clase Calculo para otener en peso de cada bolsa '''
 
 class CalcularBolsas:
-
+    #se le pasa al contructor la poblacion, la lista de precios, la lista
+    # pesos y el peso limite de la pesoMochila
     def __init__(self,poblacion,Precios,Pesos, pesoMochila):
         self.poblacion = poblacion
         self.Precios = Precios
@@ -17,19 +18,9 @@ class CalcularBolsas:
 
 
     def Calcular_PyP_Bolsas(self):
-
-
         for i in self.poblacion:
             CalcularBolsa = Calculo(self.Pesos,self.Precios,i)
             CalcularBolsa.CalcularPesoBolsa()
             CalcularBolsa.CalcularPrecioBolsa()
             self.listaPesos.append(CalcularBolsa.totalPesos)
             self.listaPrecios.append(CalcularBolsa.totalPecios)
-
-
-
-    def obtenerSolucion(self):
-        for A, B,C in zip( self.poblacion,self.listaPesos, self.listaPrecios):
-            if B <= self.pesoMochila:
-                self.ListaSoluciones.append([A,B,C])
-

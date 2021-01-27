@@ -1,10 +1,11 @@
 import random
 
-## se intercambian bit por bit para formar a los hijos, apartir de la probabilidad de intercambio
-##se cambiara el nombre a cruzar
 
-class intercambiar2:
-
+''' Apartir de la probabilidad de intercambio se determina si cruzan o no
+dos individuos, se sortea si el indivuos intercambian genes y cuando lo
+hacen se replica el gen de menor peso'''
+class Cruzamiento2:
+    #se le pasan al contructor los dos indivuos y la probabilidad de intercambio
     def __init__(self, ini_A, ind_B, probabilidad):
         self.ini_A = ini_A
         self.ini_B = ind_B
@@ -18,17 +19,14 @@ class intercambiar2:
         tama = len(self.ini_A)
         return random.randint(0, tama)
 
-    #        return random.randint(1,tama-1)
 
     def prob_Cruzamiento(self):
-        # pass
         numero = random.randint(0, 100)
         if numero <= self.probabilidad:
-            # print(numero)
             return True
         else:
-            # print(numero)
             return False
+
 
     def NuevaProbabilidad(self):
         numero = random.randint(0, 100)
@@ -41,53 +39,23 @@ class intercambiar2:
         for A,B in zip(self.ini_A,self.ini_B):
             seIntercambia=self.NuevaProbabilidad()
             if seIntercambia == True:
-                #print("si se edita")
                 if A <= B:
                     self.hijoA.append(A)
                     self.hijoB.append(A)
                 else:
                     self.hijoA.append(B)
                     self.hijoB.append(B)
-
-
             else:
-                #print("no se edita")
                 self.hijoA.append(A)
                 self.hijoB.append(B)
 
 
-
-    def construir_hijos2(self):
-
-        pass
-
     def procesoCruzamiento(self):
         self.hijoA = []
         self.hijoB = []
-        # print(self.prob_Cruzamiento())
         if self.prob_Cruzamiento() == True:
-            #print("si se cruzaron")
             self.Construir_Hijos()
             self.huboIntercambio=True
         else:
-            #print("no se cruzaron")
             self.hijoA = self.ini_A
             self.hijoB = self.ini_B
-
-        # pass
-
-    def resultado_reproduccion(self):
-        print("Padres")
-        print(self.ini_A)
-        print(self.ini_B)
-        print("hijos")
-        print(self.hijoA)
-        print(self.hijoB)
-        if self.huboIntercambio == True:
-            print("Se intercambio")
-        else:
-            print("no hubo intercambio")
-
-        print(self.probabilidad)
-
-

@@ -1,14 +1,14 @@
 import random
 
-''' 
-En esta clase se hace el proceso de seleccion de los mejores individuos que seran reproducidos, 
-    Se pasa al constructor 2 parametros, la poblacion y los valores Fitnest(
-    el peso de los individuos de la poblacion)
-    nota: este metodo tiene 3 formas de torneo, la que se usa es la llamada torneo4
+'''
+En esta clase se hace el proceso de seleccion de los mejores individuos que
+seran reproducidos, Se pasa al constructor 2 parametros, la poblacion y los
+valores Fitnest( el peso de los individuos de la poblacion)
+nota: este metodo tiene 3 formas de torneo, la que se usa es la llamada torneo4
 '''
 
 class seleccion_torneo:
-    # al constructor se le pasa la poblacion y los valoresFitnest de esta poblacion
+   # Se pasa añ constructor la poblacion y los valoresFitnest de esta poblacion
     def __init__(self,poblacion,valoresFitnes):
         self.poblacion = poblacion
         self.valoresFitnes = valoresFitnes
@@ -51,7 +51,6 @@ class seleccion_torneo:
             else:
                 if self.valoresFitnes[((i + 1) % self.tama)] < self.valoresFitnes[(i % self.tama)] and self.valoresFitnes[((i+ 1) % self.tama)] < self.valoresFitnes[((i + 2) % self.tama)]:
                     self.NuevaPoblacion.append(self.poblacion[(i + 1) % self.tama])
-
                 else:
                     self.NuevaPoblacion.append(self.poblacion[(i + 2) % self.tama])
 
@@ -61,4 +60,3 @@ class seleccion_torneo:
     def mezclar_poblacion(self):
         mezcla = random.sample(self.NuevaPoblacion, self.tama)
         self.NuevaPoblacion = mezcla
-

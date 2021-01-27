@@ -7,19 +7,18 @@ from Hacer_Cruzamiento import *
 from Hacer_Mutacion import *
 from Encontrar_Solucion_Ideal import *
 
-'''
-Aqui se desarrolla el algoritmo del problema de la mochila
-Al contructor se le pasa la longitud de las cadena,el Tamaño de la poblacion, 
-la capacidad de la mochila, la probabilidad de mutacion, la probabilidad de 
-cruzamiento, el numero de iteraciones que va a tener y el rango en que estaran los genes
-'''
 
+
+''' Aqui se desarrolla el algoritmo del problema de la mochila
+Al contructor se le pasa la longitud de las cadena,el Tamaño de la poblacion,
+la capacidad de la mochila, la probabilidad de mutacion, la probabilidad de
+cruzamiento, el numero de iteraciones que va a tener y el rango en que
+estaran los genes.'''
 
 class knapsack:
 
     def __init__(self,Longitud,Tama ,Capa, Prob_Mutacion, Prob_Cruzamiento, Num_iteraciones, Rango =100):
         self.Longitud = Longitud
-        #la capacidad de la mochila
         self.Tama = Tama
         self.Capa = Capa
         self.Prob_Mutacion = Prob_Mutacion
@@ -37,7 +36,6 @@ class knapsack:
     def generar_poblacion(self):
         poblacion = CrearPoblacion(self.Longitud, self.Tama, self.Rango)
         poblacion.CrearNuevaPoblacion()
-        #print(poblacion.poblacion)
         self.PoblacionInicial = poblacion.poblacion
         print("Poblacion inicial: ",self.PoblacionInicial)
         pesosyprecios = CrearPesos_Precios(self.Longitud, self.Capa, self.Rango)
@@ -50,54 +48,42 @@ class knapsack:
         self.PoblacionNueva = copy.copy(self.PoblacionInicial)
 
 
-    #En este metodo se busca la solucion, evaluando la poblacion, haciendo
-    # un torneo para encontrar a los mejores individuos, cruzandolos, mutandolos
-    def buscarSoluacion(self):
-
+    ''' Se busca la solucion, evaluando la poblacion, haciendo un torneo
+    para encontrar a los mejores individuos, cruzandolos, mutandolos
+    y al final encontrar al mejor '''
+    def buscarSolucion(self):
         j=0
         while j < self.Num_iteraciones:
-            #print("Se esta buscando la solucion...")
-            #print("nueva Poblacion:", self.PoblacionNueva)
             listaPesos = []
             listaPrecios = []
-            ##funcion Fitnest
+            # se evalua la poblacion en busca de posibles soluciones
             evaluar = CalcularBolsas(self.PoblacionNueva, self.Precios, self.Pesos, self.Capa)
             evaluar.Calcular_PyP_Bolsas()
-            #evaluar.obtenerSolucion()
             listaPesos = evaluar.listaPesos
+            #se separa las Respuestas
             listaPrecios = evaluar.listaPrecios
-            #print(listaPesos)
-            #print(listaPrecios)
-            #print("Soluciones:",evaluar.ListaSoluciones)
             for A, B, C, in zip(self.PoblacionNueva, listaPesos,listaPrecios):
                 if B <= self.Capa:
                     self.Respuestas.append([A,B,C])
-
-
-
         # Torneo
             torneo = seleccion_torneo(self.PoblacionNueva, listaPesos)
             torneo.torneo3()
             torneo.mezclar_poblacion()
             poblacionTorneo = torneo.NuevaPoblacion
-            #print("poblacion torneo:",poblacionTorneo)
         # Cruzamiento
             cruzamiento = Hacer_cruzamiento(poblacionTorneo, self.Prob_Cruzamiento,listaPesos,self.Capa)
             cruzamiento.cruzarPoblacion3()
             poblacionIntercambio = cruzamiento.nuevaPoblacion
-
         # mutacion
             Mutar = Hacer_Mutacion(poblacionIntercambio, self.Prob_Mutacion,self.Rango)
             Mutar.MutarPoblacion()
             poblacionMutada = Mutar.nuevaPoblacion
-
             self.PoblacionNueva.clear()
             self.PoblacionNueva = copy.deepcopy(poblacionMutada)
+
             j = j + 1
 
         print("soluciones:",self.Respuestas)
-
         solucionID = Encontrar_Solucion_Ideal(self.Respuestas)
         solucionID.bolsa_Mayor_Precio()
         print("Solucion ideal:",solucionID.Solucion_ideal)
-

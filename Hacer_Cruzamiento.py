@@ -2,10 +2,10 @@ from Cruzamiento import *
 from Cruzamiento2 import *
 
 
-''' Esta clase se encarga de hacer los cruzamientos de una poblacion tomando de dos en dos 
-    los elementos de una poblacion y haciendo el intercambio de colas, se le debe pasar en 
-    el constructor a la poblacion a cruzar y la probabilidad de que hagan este cruzamiento '''
-
+'''Esta clase se encarga de hacer los cruzamientos de una poblacion tomando
+de dos en dos los elementos de una poblacion y haciendo el intercambio de
+colas, se le debe pasar en el constructor a la poblacion a cruzar y la
+probabilidad de que hagan este cruzamiento '''
 class Hacer_cruzamiento:
     # se pasa al constructor la poblacion y la probabilidad de cruzamiento
     def __init__(self, poblacion, probabilidad,listaPesos,Capa):
@@ -35,7 +35,7 @@ class Hacer_cruzamiento:
         while i < self.tama:
             A = self.poblacion[i]
             B = self.poblacion[i + 1]
-            cambio = intercambiar2(A,B,self.probabilidad)
+            cambio = Cruzamiento2(A,B,self.probabilidad)
             cambio.procesoCruzamiento()
             self.nuevaPoblacion.append(cambio.hijoA)
             self.nuevaPoblacion.append(cambio.hijoB)
@@ -47,13 +47,11 @@ class Hacer_cruzamiento:
             if (self.listaPesos[i] and self.listaPesos[i+1]) > self.Capa:
                 A = self.poblacion[i]
                 B = self.poblacion[i + 1]
-                cambio = intercambiar2(A, B, self.probabilidad)
+                cambio = Cruzamiento2(A, B, self.probabilidad)
                 cambio.procesoCruzamiento()
                 self.nuevaPoblacion.append(cambio.hijoA)
                 self.nuevaPoblacion.append(cambio.hijoB)
-
             else:
                 self.nuevaPoblacion.append(self.poblacion[i])
                 self.nuevaPoblacion.append(self.poblacion[i+1])
-
             i = i + 2

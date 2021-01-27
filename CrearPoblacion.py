@@ -1,7 +1,7 @@
 import  random
-'''  
-En esta clase se crea a la poblacion, en base a la logitud y al tamaño 
-que se pasan en el constructor, ademas del rango en que los genees pueden 
+'''
+En esta clase se crea a la poblacion, en base a la logitud y al tamaño
+que se pasan en el constructor, ademas del rango en que los genees pueden
 encontrarse se regresa a traves del atributo poblacion
 '''
 
@@ -15,7 +15,6 @@ class CrearPoblacion:
         self.tama=tama
         #en rango maximo en que pueden estar los cromosomas
         self.rango = rango
-        #la poblacio, se crea la lista vacia para facilitar el manejo
         self.poblacion = []
 
 
@@ -40,6 +39,3 @@ class CrearPoblacion:
             self.poblacion.append(nuevoIndividuo)
             i = i + 1
         return self.poblacion
-
-
-
